@@ -7,18 +7,18 @@ namespace RQEexam
     [Binding]
     public class TrigonometrischeFunktionenSteps
     {
-        int num, erg;
+        double num, erg;
 
         [Given(@"the number is (.*)")]
         public void GivenTheNumberIs(Decimal p0)
         {
-            num = (int)Math.PI;
+            num = Math.PI;
         }
 
         [When(@"I chose sinus")]
         public void WhenIChoseSinus()
         {
-            erg = (int)Math.Sin(num);
+            erg = Math.Sin(num);
         }
 
         [Then(@"the result should be (.*)")]
@@ -26,7 +26,7 @@ namespace RQEexam
         {
             var expected = p0;
             var actual = erg;
-            Assert.Equal(expected, actual);
+            Assert.Equal(expected, actual,5);
         }
 
        
@@ -34,13 +34,13 @@ namespace RQEexam
         [When(@"I chose cosinus")]
         public void WhenIChoseCosinus()
         {
-            erg = (int)Math.Cos(num);
+            erg = Math.Cos(num);
         }
 
         [When(@"I chose tangens")]
         public void WhenIChoseTangens()
         {
-            erg = (int)Math.Tan(num);
+            erg = Math.Tan(num);
         }
 
       
